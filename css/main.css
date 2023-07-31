@@ -1,0 +1,300 @@
+:root{
+    --primary-color: #612674;
+    --default-gap: 1.25em;
+}
+
+html{
+    font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Oxygen', sans-serif;
+}
+
+.maxWidth{
+    max-width: 70.25em;
+    margin: auto;
+}
+
+.top_header{
+    text-align: center;
+}
+
+.top_header_nav{
+    background-color: var(--primary-color);
+}
+
+.top_header_nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.top_header_nav a{
+    color: white;
+    text-decoration: none;
+    /*O display: block, deixa todo os espaços laterais do texto como clicável*/
+    display: block;
+    padding: 1em;
+}
+
+.top_header_nav a:hover{
+    background-color: color-mix(in srgb, var(--primary-color), white 10%);
+}
+
+/*md = médio (6 colunas)*/
+@media screen and (min-width: 48.75em){
+    
+    .top_header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .top_header_logo{
+        margin-left: 1.5em;
+    }
+
+    .top_header_nav{
+        background-color: initial;
+    }
+
+    .top_header_nav li{
+        display: inline-block;
+    }
+
+    .top_header_nav a{
+        color: var(--primary-color);
+    }
+
+    .top_header_nav a:hover{
+        background-color: color-mix(in srgb, var(--primary-color), white 85%);
+    }
+
+}
+
+.heroBanner{
+    text-align: center;
+    /*bg-c: #f6f6f6*/
+    background-color: #f6f6f6;
+    padding: 1em;
+}
+
+.heroBanner_iconPlay{
+    height: 5em;
+    width: 5em;
+    /*A imagem existe na página, mas não é possível visualizar*/
+    display: none;
+}
+
+/*Adaptando o tamanho da imagem ao container*/
+.heroBanner_iconPlay img{
+    width: 100%;
+}
+
+.heroBanner_title{
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    margin: 1.5em 0;
+}
+
+.heroBanner_subtitle{
+    color: color-mix(in srgb, var(--primary-color), white 40%);
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.heroBanner_btn{
+    /*Serve para colocar padding e etc*/
+    display: inline-block;
+    padding: .5em 2em;
+    background-color: #58c4c4;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.heroBanner_btn:hover{
+    background-color: #03c8c8;
+}
+
+/*lg = grande (3 colunas)*/
+@media screen and (min-width: 48.75em){
+
+    .heroBanner{
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .heroBanner_title, .heroBanner_subtitle{
+        color: white;
+    }
+
+    .heroBanner_iconPlay{
+        display: block;
+        /*Centralizando a imagem*/
+        margin: auto;
+    }
+}
+
+/*md = médio (6 colunas)*/
+@media screen and (min-width: 56.25em){
+    
+    .heroBanner{
+        background-image: url(../images/bg/bg_topo_1198x670.jpg);
+        /*Fazendo com que o heroBanner aumente/diminua de tamanho com a mesma proporção da imagem*/
+        aspect-ratio: 1198 / 670;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .heroBanner .maxWidth{
+        margin: initial;
+        margin-bottom: 4em;
+        width: 75%;
+    }
+}
+
+/*xl = super grande (3 colunas)*/
+@media screen and (min-width: 74em) {
+    
+    .heroBanner{
+        background-image: linear-gradient(transparent, var(--primary-color)), url(../images/bg/bg_topo_1600x1374.jpg);
+        background-blend-mode: soft-light;
+        background-position: center top;
+        background-color: var(--primary-color);
+        background-repeat: no-repeat;
+        max-height: 80vh;
+        width: 100%;
+    }
+
+    .heroBanner .maxWidth{
+        width: 50%;
+    }
+
+    .heroBanner_iconPlay{
+        width: 7em;
+        height: 7em;
+    }
+
+    .heroBanner_title, .heroBanner_subtitle{
+        text-shadow: 4px 4px 2px rgb(0 0 0 / .8);
+    }
+}
+
+.middle_content{
+    background-color: #f6f6f6;
+    text-align: center;
+    padding: 2em;
+}
+
+.middle_content a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.middle_content_title{
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 1.25em;
+}
+
+.middle_content p{
+    line-height: 1.5;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--default-gap);
+}
+
+.col{
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+.col-sm-12{
+    width: 100%;
+}
+
+@media screen and (min-width: 48.75em){
+    
+    .col-md-6{
+        width: calc(50% - var(--default-gap));
+    }
+}
+
+@media screen and (min-width: 74em) {
+    
+    .col-xl-3{
+        width: calc(25% - var(--default-gap));
+    }
+
+    .col-xl-6{
+        width: calc(50% - var(--default-gap));
+    }
+}
+
+.mainContent{
+    padding: 2em;
+}
+
+.mainContent_img img{
+    width: 100%;
+}
+
+.mainContent p {
+    line-height: 1.2em;
+}
+
+.mainContent_title{
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-weight: normal;
+    letter-spacing: .2em;
+    font-size: 1.25em;
+}
+
+.mainContent .row{
+    /*linha coluna
+    gap: 4em 1em;*/
+    row-gap: 4em;
+}
+
+.mainContent_article{
+    container: main-content / inline-size;
+}
+
+@container main-content (min-width: 31.25em){
+
+    .mainContent_container{
+        display: flex;
+        gap: var(--default-gap);
+    }
+
+    .mainContent_title{
+        margin-top: 0;
+    }
+
+    .mainContent_img img{
+        max-height: 382px;
+    }
+
+    .mainContent_img{
+        flex: 0 0 25;
+    }
+
+    .mainContent_text{
+        flex-grow: 1;
+    }
+}
+
+.footer{
+    background-color: #25303e;
+    color: #83969f;
+    text-align: center;
+    padding: 2em;
+}
